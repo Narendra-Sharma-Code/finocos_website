@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,31 +14,28 @@ const Navbar = () => {
       path: '/',
       dropdownItems: []
     },
-    { 
-      name: 'Assurance', 
-      path: '/assurance',
+    {
+      name: 'Services',
+      path: '#',
       dropdownItems: [
-        { name: 'Financial Audits', path: '/assurance/financial-audits' },
-        { name: 'Compliance', path: '/assurance/compliance' },
-        { name: 'Risk Management', path: '/assurance/risk-management' }
-      ]
-    },
-    { 
-      name: 'Advisory', 
-      path: '/advisory',
-      dropdownItems: [
-        { name: 'Business Consulting', path: '/advisory/business-consulting' },
-        { name: 'Financial Strategy', path: '/advisory/financial-strategy' },
-        { name: 'Mergers & Acquisitions', path: '/advisory/mergers-acquisitions' }
-      ]
-    },
-    { 
-      name: 'Automation', 
-      path: '/automation',
-      dropdownItems: [
-        { name: 'Process Automation', path: '/automation/process' },
-        { name: 'RPA Solutions', path: '/automation/rpa' },
-        { name: 'AI Integration', path: '/automation/ai' }
+        { 
+          name: 'Assurance', 
+          path: '/assurance',
+          description: 'Comprehensive audit and compliance solutions',
+          icon: '🛡️'
+        },
+        { 
+          name: 'Advisory', 
+          path: '/advisory',
+          description: 'Strategic business and financial consulting',
+          icon: '💼'
+        },
+        { 
+          name: 'Automation', 
+          path: '/automation',
+          description: 'Innovative technology solutions',
+          icon: '⚙️'
+        }
       ]
     },
     { 
@@ -116,7 +114,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <motion.img 
-              src="/src/assets/logo.png"
+              src={logo}
               alt="Finocos Logo"
               className="h-12"
               initial={{ opacity: 0, x: -20 }}
@@ -180,19 +178,46 @@ const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+                        className="absolute left-0 mt-2 w-80 rounded-xl shadow-2xl bg-white/95 backdrop-blur-sm ring-1 ring-black/5 overflow-hidden z-50"
                       >
-                        <div className="py-1">
-                          {link.dropdownItems.map((item) => (
-                            <Link
-                              key={item.path}
-                              to={item.path}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                              onClick={() => setActiveDropdown(null)}
-                            >
-                              {item.name}
-                            </Link>
-                          ))}
+                        <div className="p-2">
+                          {link.name === 'Services' ? (
+                            <div className="grid gap-2">
+                              {link.dropdownItems.map((item) => (
+                                <Link
+                                  key={item.path}
+                                  to={item.path}
+                                  className="group flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
+                                  onClick={() => setActiveDropdown(null)}
+                                >
+                                  <span className="text-2xl mr-3 mt-0.5 group-hover:scale-110 transition-transform">
+                                    {item.icon}
+                                  </span>
+                                  <div>
+                                    <div className="font-medium text-gray-900 group-hover:text-blue-600">
+                                      {item.name}
+                                    </div>
+                                    <div className="text-sm text-gray-500">
+                                      {item.description}
+                                    </div>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          ) : (
+                            <div className="py-1">
+                              {link.dropdownItems.map((item) => (
+                                <Link
+                                  key={item.path}
+                                  to={item.path}
+                                  className="block px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-100 rounded-md transition-colors"
+                                  onClick={() => setActiveDropdown(null)}
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </motion.div>
                     )}

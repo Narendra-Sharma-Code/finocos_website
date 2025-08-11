@@ -162,6 +162,98 @@ const Company = () => {
           </div>
         </motion.div>
 
+        {/* Our Leaders */}
+        <motion.div 
+          className="mb-20"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold mb-12 text-center">Our Leadership</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Leader 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-red-500/50 transition-all duration-300"
+            >
+              <div className="h-64 bg-gradient-to-br from-blue-900/50 to-cyan-900/50 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white">AR</span>
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">Akash Rai</h3>
+                <p className="text-red-300 mb-4">CEO & Founder</p>
+                <p className="text-gray-300 text-sm">Visionary leader with 15+ years of experience in technology and business strategy.</p>
+              </div>
+            </motion.div>
+
+            {/* Leader 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-red-500/50 transition-all duration-300"
+            >
+              <div className="h-64 bg-gradient-to-br from-purple-900/50 to-blue-900/50 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white">SM</span>
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">Simon Majumdar</h3>
+                <p className="text-red-300 mb-4">CEO & Founder</p>
+                <p className="text-gray-300 text-sm">Visionary leader with 15+ years of experience in technology and business strategy.</p>
+              </div>
+            </motion.div>
+
+            {/* Leader 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-red-500/50 transition-all duration-300"
+            >
+              <div className="h-64 bg-gradient-to-br from-cyan-900/50 to-emerald-900/50 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white">RS</span>
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">Ronak Shah</h3>
+                <p className="text-red-300 mb-4">CTO</p>
+                <p className="text-gray-300 text-sm">Operational excellence leader with expertise in scaling businesses globally.</p>
+              </div>
+            </motion.div>
+
+            {/* Leader 4 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden border border-white/10 hover:border-red-500/50 transition-all duration-300"
+            >
+              <div className="h-64 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-white/10 border-2 border-white/20 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white">Em</span>
+                </div>
+              </div>
+              <div className="p-6 text-center">
+                <h3 className="text-xl font-semibold text-white mb-1">Empty</h3>
+                <p className="text-red-300 mb-4">Empty</p>
+                <p className="text-gray-300 text-sm">Empty</p>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
         {/* CTA */}
         <motion.div 
           className="bg-gradient-to-r from-red-500/10 to-pink-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 text-center"

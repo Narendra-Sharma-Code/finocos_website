@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -39,13 +39,15 @@ function App() {
       <Navbar />
       <AnimatePresence mode="wait">
         <main className="flex-grow">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/assurance" element={<Assurance />} />
-            <Route path="/advisory" element={<Advisory />} />
-            <Route path="/automation" element={<Automation />} />
-            <Route path="/resources" element={<Resources />} />
-            <Route path="/company" element={<Company />} />
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="assurance" element={<Assurance />} />
+            <Route path="advisory" element={<Advisory />} />
+            <Route path="automation" element={<Automation />} />
+            <Route path="resources" element={<Resources />} />
+            <Route path="company" element={<Company />} />
+            {/* Add a catch-all route that redirects to home */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
       </AnimatePresence>
