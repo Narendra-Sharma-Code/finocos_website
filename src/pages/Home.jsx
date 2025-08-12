@@ -1,5 +1,5 @@
 // src/pages/Home.jsx
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
@@ -15,6 +15,22 @@ import {
 
 const Home = () => {
   const heroRef = useRef(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  React.useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   // useScroll targeted to heroRef so progress is only for the hero area
   const { scrollYProgress } = useScroll({
@@ -105,21 +121,50 @@ const Home = () => {
               </motion.p>
 
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-                <div className="relative group w-full sm:w-auto">
-                  <Link
-                    to="/offerings"
-                    className="inline-flex items-center justify-center w-full px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-lg transition-all duration-350 transform-gpu group-hover:-translate-y-1 shadow-md text-sm sm:text-base"
+                <div className="relative w-full sm:w-auto" ref={dropdownRef}>
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="group inline-flex items-center justify-center w-full px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-lg transition-all duration-350 transform-gpu hover:-translate-y-1 shadow-md text-sm sm:text-base"
                     aria-label="Explore Our Offerings"
+                    aria-expanded={isDropdownOpen}
+                    aria-haspopup="true"
                   >
                     Explore Our Offerings
-                    <FiArrowRight className="ml-2 sm:ml-3 transition-transform duration-300 group-hover:translate-x-1 sm:group-hover:translate-x-2 flex-shrink-0" />
-                  </Link>
+                    <FiArrowRight className={`ml-2 sm:ml-3 transition-transform duration-300 ${isDropdownOpen ? 'rotate-90' : 'group-hover:translate-x-1 sm:group-hover:translate-x-2'} flex-shrink-0`} />
+                  </button>
 
-                  <div className="absolute z-20 mt-2 sm:mt-3 w-full sm:w-56 origin-top sm:origin-top-left rounded-md bg-gray-800/90 shadow-lg ring-1 ring-black/10 focus:outline-none opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform -translate-y-2 group-hover:translate-y-0 left-0 right-0 sm:right-auto">
-                    <div className="py-1">
-                      <Link to="/advisory" className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left">Advisory Services</Link>
-                      <Link to="/assurance" className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left">Assurance Services</Link>
-                      <Link to="/automation" className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left">Automation Solutions</Link>
+                  <div 
+                    className={`absolute z-20 mt-2 sm:mt-3 w-full sm:w-56 origin-top sm:origin-top-left rounded-md bg-gray-800/90 shadow-lg ring-1 ring-black/10 focus:outline-none transition-all duration-200 transform ${
+                      isDropdownOpen 
+                        ? 'opacity-100 visible translate-y-0' 
+                        : 'opacity-0 invisible -translate-y-2'
+                    } left-0 right-0 sm:right-auto backdrop-blur-sm`}
+                  >
+                    <div className="py-1" role="menu" aria-orientation="vertical">
+                      <Link 
+                        to="/advisory" 
+                        className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left"
+                        role="menuitem"
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        Advisory Services
+                      </Link>
+                      <Link 
+                        to="/assurance" 
+                        className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left"
+                        role="menuitem"
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        Assurance Services
+                      </Link>
+                      <Link 
+                        to="/automation" 
+                        className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 transition-colors text-center sm:text-left"
+                        role="menuitem"
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        Automation Solutions
+                      </Link>
                     </div>
                   </div>
                 </div>
