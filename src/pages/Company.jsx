@@ -30,9 +30,7 @@ const values = [
 
 const leaders = [
   { initials: "AR", name: "Akash Rai", title: "CEO & Founder", bio: "Visionary leader with deep experience in finance, banking operations, and export compliance." },
-  { initials: "SM", name: "Simon Majumdar", title: "Co-Founder", bio: "Expert in corporate compliance and process design with strong domain knowledge." },
-  { initials: "RS", name: "Ronak Shah", title: "CTO", bio: "Technology lead driving product and platform engineering for automation solutions." },
-  { initials: "EM", name: "Emerging", title: "Head - Delivery", bio: "Operational excellence and client delivery specialist." }
+  { initials: "SM", name: "Simon Majumdar", title: "Co-Founder", bio: "Expert in corporate compliance and process design with strong domain knowledge." }
 ];
 
 const timeline = [
