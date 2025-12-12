@@ -6,20 +6,21 @@ import { dirname, resolve } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Vite config tuned for static hosting (GitHub Pages / Netlify)
+// Final Vite config for Vercel / GitHub Pages / Netlify
 export default defineConfig({
-  base: './',
+  base: './', // IMPORTANT: prevents white screen
   plugins: [react()],
-  css: {
-    postcss: './postcss.config.js',
-  },
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
     },
   },
+  css: {
+    postcss: './postcss.config.js',
+  },
   build: {
     outDir: 'dist',
+    emptyOutDir: true, // optional but recommended
   },
   server: {
     port: 3000,
