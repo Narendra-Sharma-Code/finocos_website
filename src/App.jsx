@@ -13,6 +13,7 @@ import Advisory from './pages/Advisory';
 import Automation from './pages/Automation';
 import Services from './pages/Services';
 import Resources from './pages/Resources';
+import Blog from './pages/Blog';
 import Company from './pages/Company';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
@@ -53,6 +54,7 @@ function App() {
             <Route path="advisory" element={<Advisory />} />
             <Route path="automation" element={<Automation />} />
             <Route path="resources" element={<Resources />} />
+            <Route path="resources/blog" element={<Blog />} />
             <Route path="company" element={<Company />} />
             <Route path="careers" element={<Careers />} />
             <Route path="contact" element={<Contact />} />
