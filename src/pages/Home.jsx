@@ -10,7 +10,11 @@ import {
   FiCloud,
   FiCpu,
   FiLayers,
-  FiCode
+  FiCode,
+  FiFileText,
+  FiSearch,
+  FiActivity,
+  FiBarChart2
 } from 'react-icons/fi';
 
 const Home = () => {
@@ -44,21 +48,66 @@ const Home = () => {
 
   // --- Data arrays (unchanged from your version) ---
   const trendingFeatures = [
-    { icon: <FiZap className="w-7 h-7" />, title: 'AI-Powered Automation', description: 'Next-gen automation solutions powered by artificial intelligence to transform your business processes.', gradient: 'from-purple-600 to-blue-500', delay: 0.1 },
-    { icon: <FiShield className="w-7 h-7" />, title: 'Blockchain Security', description: 'Enterprise-grade blockchain solutions ensuring maximum security and transparency.', gradient: 'from-green-500 to-teal-400', delay: 0.2 },
-    { icon: <FiTrendingUp className="w-7 h-7" />, title: 'Quantum Computing', description: 'Harness the power of quantum computing for complex problem-solving.', gradient: 'from-pink-500 to-rose-500', delay: 0.3 },
-    { icon: <FiCloud className="w-7 h-7" />, title: 'Edge Computing', description: 'Faster processing with reduced latency through distributed computing.', gradient: 'from-amber-500 to-orange-500', delay: 0.4 }
+    { icon: <FiTrendingUp className="w-7 h-7" />, title: 'Union Budget: Export & Working Capital Impact', description: 'We track policy and tax updates to help finance teams anticipate changes in incentives, duties, and cash-flow planning.', gradient: 'from-blue-600 to-indigo-700', delay: 0.1 },
+    { icon: <FiShield className="w-7 h-7" />, title: 'Compliance-First Automation', description: 'Stronger controls, audit trails, and validation are becoming non-negotiable for exporters and regulated workflows.', gradient: 'from-emerald-600 to-teal-700', delay: 0.2 },
+    { icon: <FiFileText className="w-7 h-7" />, title: 'Document Digitisation (eBRC, Invoices, Advices)', description: 'Faster processing depends on clean, structured data—OCR and AI extraction are accelerating end-to-end automation.', gradient: 'from-violet-600 to-purple-700', delay: 0.3 },
+    { icon: <FiBarChart2 className="w-7 h-7" />, title: 'Real-Time MIS for Finance Operations', description: 'CFOs are shifting from periodic reporting to live dashboards for collections, closures, exceptions, and performance.', gradient: 'from-cyan-600 to-sky-600', delay: 0.4 }
   ];
 
   const caseStudies = [
-    { title: 'Global Bank Digital Transformation', description: 'Enabled 40% faster transaction processing and 99.99% uptime for a leading global bank.', impact: '200% ROI within first year', gradient: 'from-blue-600 to-indigo-700', delay: 0.1 },
-    { title: 'Healthcare Data Revolution', description: 'Secured and streamlined patient data management for a healthcare network serving 2M+ patients.', impact: '70% reduction in data processing time', gradient: 'from-emerald-600 to-teal-700', delay: 0.2 },
-    { title: 'Retail Supply Chain Optimization', description: 'AI-driven inventory management system reducing waste by 35% for a retail giant.', impact: '25% increase in supply chain efficiency', gradient: 'from-violet-600 to-purple-700', delay: 0.3 }
+    {
+      icon: <FiFileText className="w-6 h-6" />,
+      title: 'AI-Powered PDF Extraction',
+      description: 'Extract structured data from invoices, shipping documents, and statements using AI-driven document understanding.',
+      impact: 'Automates data capture with higher accuracy and faster turnaround',
+      gradient: 'from-cyan-500 to-blue-600',
+      delay: 0.1
+    },
+    {
+      icon: <FiCpu className="w-6 h-6" />,
+      title: 'Edge Computing',
+      description: 'Enable distributed processing closer to the source for time-sensitive workflows and on-prem environments.',
+      impact: 'Faster processing with reduced latency through distributed computing',
+      gradient: 'from-amber-500 to-orange-600',
+      delay: 0.15
+    },
+    {
+      icon: <FiSearch className="w-6 h-6" />,
+      title: 'OCR for Scanned PDFs',
+      description: 'Convert scanned documents into searchable, machine-readable text to unlock automation across legacy paperwork.',
+      impact: 'Improves downstream processing for compliance, audit, and MIS',
+      gradient: 'from-emerald-500 to-teal-600',
+      delay: 0.2
+    },
+    {
+      icon: <FiLayers className="w-6 h-6" />,
+      title: 'Large Excel Model Automation',
+      description: 'Handle large spreadsheets and complex reconciliation models with scalable processing and robust validation.',
+      impact: 'Reduces manual effort for heavy Excel-based operations',
+      gradient: 'from-violet-600 to-purple-700',
+      delay: 0.25
+    },
+    {
+      icon: <FiActivity className="w-6 h-6" />,
+      title: 'Real-Time Analytics',
+      description: 'Track KPIs as they move with live dashboards, alerts, and drill-down views across your workflows.',
+      impact: 'Enables faster decisions with near real-time visibility',
+      gradient: 'from-blue-600 to-indigo-700',
+      delay: 0.3
+    },
+    {
+      icon: <FiBarChart2 className="w-6 h-6" />,
+      title: 'Simulation & Forecasting',
+      description: 'Model scenarios and forecast outcomes to plan capacity, costs, and operational performance with confidence.',
+      impact: 'Supports proactive planning with scenario-based insights',
+      gradient: 'from-pink-600 to-rose-600',
+      delay: 0.35
+    }
   ];
 
   const services = [
     { icon: <FiCpu className="w-7 h-7" />, title: 'Optimized Solution', description: 'Cutting-edge AI solutions tailored to your business needs', gradient: 'from-blue-500 to-cyan-400' },
-    { icon: <FiLayers className="w-7 h-7" />, title: 'Cloud Solutions', description: 'Scalable and secure cloud infrastructure for your business', gradient: 'from-purple-500 to-pink-500' },
+    { icon: <FiShield className="w-7 h-7" />, title: 'Audit & Compliance', description: 'Compliance-first reviews, controls, and reporting to strengthen governance and reduce operational risk.', gradient: 'from-purple-500 to-pink-500' },
     { icon: <FiCode className="w-7 h-7" />, title: 'Custom Development', description: 'Tailored software solutions for your unique requirements', gradient: 'from-green-500 to-emerald-400' }
   ];
 
@@ -234,7 +283,7 @@ const Home = () => {
               transition={{ duration: 0.6 }} 
               className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-3 bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-teal-500"
             >
-              Impact Case Studies
+              Advanced Capabilities in Action
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0 }} 
@@ -243,7 +292,7 @@ const Home = () => {
               transition={{ delay: 0.1 }} 
               className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto px-2 sm:px-0"
             >
-              Real-world transformations powered by our innovative solutions
+              Professional-grade automation and analytics designed for modern finance and operations teams
             </motion.p>
           </div>
 
@@ -251,18 +300,29 @@ const Home = () => {
             {caseStudies.map((study, index) => (
               <motion.div 
                 key={index} 
-                className="group relative overflow-hidden rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white/7 bg-white/2 backdrop-blur-sm hover:shadow-2xl transition-all duration-500" 
+                className="group relative overflow-hidden rounded-xl sm:rounded-2xl p-5 sm:p-7 border border-white/10 bg-gradient-to-br from-white/4 to-white/2 backdrop-blur-sm hover:shadow-2xl hover:border-white/20 transition-all duration-500" 
                 initial={{ y: 24, opacity: 0 }} 
                 whileInView={{ y: 0, opacity: 1 }} 
                 viewport={{ once: true, margin: "-50px" }} 
                 transition={{ delay: study.delay }}
               >
-                <div className={`h-1.5 w-10 sm:w-12 mb-4 sm:mb-6 rounded-full bg-gradient-to-r ${study.gradient}`}></div>
-                <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-white">{study.title}</h3>
-                <p className="text-gray-300 text-xs sm:text-sm mb-3 sm:mb-4">{study.description}</p>
-                <div className="flex items-center text-xs sm:text-sm font-medium text-cyan-400">
-                  <span className="mr-1.5">🚀</span>
-                  <span>{study.impact}</span>
+                <div className="flex items-start justify-between gap-4 mb-4 sm:mb-5">
+                  <div className="flex items-center gap-3">
+                    <div className={`p-2.5 rounded-lg bg-gradient-to-br ${study.gradient} text-white shadow-lg`}>
+                      {React.cloneElement(study.icon, { className: 'w-5 h-5 sm:w-6 sm:h-6' })}
+                    </div>
+                    <div>
+                      <h3 className="text-base sm:text-lg font-semibold text-white leading-snug">{study.title}</h3>
+                      <div className={`h-1 w-10 sm:w-12 mt-2 rounded-full bg-gradient-to-r ${study.gradient}`} />
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-5">{study.description}</p>
+
+                <div className="rounded-lg border border-white/10 bg-black/20 px-3.5 py-2.5">
+                  <div className="text-[11px] sm:text-xs text-gray-400 uppercase tracking-wide">Key Benefit</div>
+                  <div className="text-xs sm:text-sm font-medium text-cyan-300 mt-1">{study.impact}</div>
                 </div>
               </motion.div>
             ))}
@@ -315,41 +375,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA SECTION */}
-      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-black/10 to-black/30">
-        <div className="container mx-auto max-w-4xl px-4 sm:px-6">
-          <motion.div 
-            className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 lg:p-12 shadow-2xl text-center" 
-            initial={{ opacity: 0, y: 40 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true, margin: "-50px" }} 
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-gray-300 mb-6 sm:mb-8 text-base sm:text-lg max-w-2xl mx-auto">
-              Join the ranks of industry leaders who trust our expertise
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-              <Link 
-                to="/contact" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3.5 text-sm sm:text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full sm:w-auto"
-              >
-                Get Started
-                <FiArrowRight className="ml-2 -mr-1 h-4 w-4 sm:h-5 sm:w-5" />
-              </Link>
-              <Link 
-                to="/company" 
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-2.5 sm:py-3.5 text-sm sm:text-base font-medium text-white bg-transparent hover:bg-white/5 border border-white/20 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/20 w-full sm:w-auto"
-              >
-                Learn More
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ABOUT / COMPANY */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-black/3 to-black/12">
         <div className="container mx-auto px-4 sm:px-6">
@@ -396,15 +421,17 @@ const Home = () => {
             >
               <h3 className="text-base sm:text-lg font-semibold text-white mb-4 sm:mb-6">By The Numbers</h3>
               <div className="space-y-4 sm:space-y-6">
-                {[ 
-                  { label: 'Years of Excellence', value: '10+' }, 
-                  { label: 'Dedicated Professionals', value: '120+' }, 
-                  { label: 'Major Clients', value: '60+' }, 
-                  { label: 'Client Retention', value: '95%' } 
+                {[
+                  { label: 'Years of Service', value: '5+' },
+                  { label: 'Client Retention', value: '95%' },
+                  { label: 'Excess Finance Costs Identified', value: 'Rs. 65 Crores+' },
+                  { label: 'Excesses Refunded by Banks', value: 'Rs. 52 Crores+' },
+                  { label: 'EIDPMS Cases Closed with RBI', value: '3000+' },
+                  { label: "eBRC's Generated", value: '2000+' }
                 ].map((stat, idx) => (
                   <div key={idx} className="flex items-center">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0">
-                      <span className="text-blue-400 font-bold text-sm sm:text-base">{stat.value}</span>
+                    <div className="w-14 h-10 sm:w-16 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 px-2">
+                      <span className="text-blue-400 font-bold text-[11px] sm:text-xs text-center leading-tight">{stat.value}</span>
                     </div>
                     <span className="text-gray-300 text-sm sm:text-base">{stat.label}</span>
                   </div>

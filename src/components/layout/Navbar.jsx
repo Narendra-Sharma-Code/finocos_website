@@ -16,27 +16,8 @@ const Navbar = () => {
     },
     {
       name: 'Services',
-      path: '#',
-      dropdownItems: [
-        { 
-          name: 'Assurance', 
-          path: '/assurance',
-          description: 'Comprehensive audit and compliance solutions',
-          icon: '🛡️'
-        },
-        { 
-          name: 'Advisory', 
-          path: '/advisory',
-          description: 'Strategic business and financial consulting',
-          icon: '💼'
-        },
-        { 
-          name: 'Automation', 
-          path: '/automation',
-          description: 'Innovative technology solutions',
-          icon: '⚙️'
-        }
-      ]
+      path: '/services',
+      dropdownItems: []
     },
     { 
       name: 'Resources', 
@@ -51,8 +32,8 @@ const Navbar = () => {
       name: 'Company', 
       path: '/company',
       dropdownItems: [
-        { name: 'About Us', path: '/company/about' },
-        { name: 'Careers', path: '/company/careers' },
+        { name: 'About Us', path: '/company' },
+        { name: 'Careers', path: '/careers' },
         { name: 'Contact', path: '/contact' }
       ]
     }

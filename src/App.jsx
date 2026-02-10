@@ -11,12 +11,19 @@ import Home from './pages/Home';
 import Assurance from './pages/Assurance';
 import Advisory from './pages/Advisory';
 import Automation from './pages/Automation';
+import Services from './pages/Services';
 import Resources from './pages/Resources';
 import Company from './pages/Company';
+import Careers from './pages/Careers';
+import Contact from './pages/Contact';
 
 function App() {
   const location = useLocation();
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,11 +48,14 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route index element={<Home />} />
+            <Route path="services" element={<Services />} />
             <Route path="assurance" element={<Assurance />} />
             <Route path="advisory" element={<Advisory />} />
             <Route path="automation" element={<Automation />} />
             <Route path="resources" element={<Resources />} />
             <Route path="company" element={<Company />} />
+            <Route path="careers" element={<Careers />} />
+            <Route path="contact" element={<Contact />} />
             {/* Add a catch-all route that redirects to home */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
