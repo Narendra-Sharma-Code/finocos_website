@@ -25,7 +25,6 @@ const Navbar = () => {
       dropdownItems: [
         { name: 'Blog', path: '/resources/blog' },
         { name: 'Case Studies', path: '/resources/case-studies' },
-        { name: 'Whitepapers', path: '/resources/whitepapers' }
       ]
     },
     { 

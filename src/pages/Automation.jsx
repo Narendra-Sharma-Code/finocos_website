@@ -13,8 +13,7 @@ import {
   FiPlayCircle,
   FiPhone,
   FiMail,
-  FiArrowRight,
-  FiDownload
+  FiArrowRight
 } from "react-icons/fi";
 
 const features = [
@@ -173,13 +172,6 @@ const Automation = () => {
                   Get a Demo
                   <FiArrowRight />
                 </Link>
-
-                <a
-                  href="/assets/Finocos-Automation-Brochure.pdf"
-                  className="inline-flex items-center gap-2 px-4 py-3 border border-white/10 rounded-md text-white/90 text-sm bg-white/3 hover:bg-white/4 transition"
-                >
-                  <FiDownload /> Download Brochure
-                </a>
               </div>
             </motion.div>
           </div>
@@ -217,16 +209,6 @@ const Automation = () => {
                     </div>
                     <div className="text-sm text-gray-300 mb-3">{f.subtitle}</div>
                     <p className="text-gray-300 text-sm">{f.description}</p>
-
-                    <div className="mt-4">
-                      <a
-                        href="#contact"
-                        className="text-cyan-300 text-sm inline-flex items-center gap-2 hover:underline"
-                      >
-                        Learn more
-                        <FiArrowRight />
-                      </a>
-                    </div>
                   </div>
                 </div>
 
@@ -278,10 +260,6 @@ const Automation = () => {
                 <Link to="/contact" className="inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-md text-white font-medium">
                   Request Assessment
                 </Link>
-
-                <a href="/assets/Finocos-Automation-Pilot.pdf" className="inline-flex items-center justify-center px-4 py-3 border border-white/10 rounded-md text-white/90">
-                  Download Pilot Pack <FiDownload className="ml-2" />
-                </a>
               </div>
             </motion.div>
           </div>
@@ -301,9 +279,6 @@ const Automation = () => {
               <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 bg-white text-blue-700 rounded-md font-semibold shadow">
                 Get a Demo <FiArrowRight />
               </Link>
-              <a href="#contact" className="inline-flex items-center gap-2 px-4 py-3 border border-white/20 rounded-md text-white">
-                Talk to Sales <FiPhone />
-              </a>
             </div>
           </motion.div>
         </div>
