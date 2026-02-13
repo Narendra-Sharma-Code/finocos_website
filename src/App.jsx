@@ -27,6 +27,29 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const path = location.pathname;
+
+    const titleMap = {
+      '/': 'Finocos',
+      '/services': 'Finocos | Services',
+      '/assurance': 'Finocos | Assurance',
+      '/advisory': 'Finocos | Advisory',
+      '/automation': 'Finocos | Automation',
+      '/resources': 'Finocos | Resources',
+      '/resources/blog': 'Finocos | Blog',
+      '/resources/case-studies': 'Finocos | Case Studies',
+      '/company': 'Finocos | Company',
+      '/careers': 'Finocos | Careers',
+      '/contact': 'Finocos | Contact',
+      '/privacy': 'Finocos | Privacy Policy',
+      '/terms': 'Finocos | Terms of Service',
+      '/cookies': 'Finocos | Cookie Policy',
+    };
+
+    document.title = titleMap[path] || 'Finocos';
+  }, [location.pathname]);
+
+  useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [location.pathname, location.hash]);
 
