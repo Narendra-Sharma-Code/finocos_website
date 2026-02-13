@@ -107,14 +107,6 @@ const Assurance = () => {
                   <span>Get a Consultation</span>
                   <FiArrowRight className="opacity-90" />
                 </Link>
-
-                <a
-                  href="/assets/Finocos-Assurance-Brochure.pdf"
-                  className="inline-flex items-center gap-2 px-5 py-3 border border-white/10 hover:border-cyan-400/40 rounded-md text-white/90 text-sm transition-shadow bg-white/2"
-                >
-                  <FiDownload className="text-base" />
-                  <span>Download Brochure</span>
-                </a>
               </div>
             </div>
 
@@ -227,7 +219,7 @@ const Assurance = () => {
 
               <motion.div variants={itemFadeUp} className="rounded-2xl p-6 grid grid-cols-2 gap-4 bg-gradient-to-br from-white/3 to-white/4 border border-white/8 backdrop-blur-sm">
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-cyan-300">12+</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">5+</div>
                   <div className="text-sm text-gray-300">Years of Experience</div>
                 </div>
                 <div className="text-center py-4">
@@ -235,11 +227,11 @@ const Assurance = () => {
                   <div className="text-sm text-gray-300">Client Retention</div>
                 </div>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-cyan-300">120+</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">10+</div>
                   <div className="text-sm text-gray-300">Professionals</div>
                 </div>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-cyan-300">60+</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">20+</div>
                   <div className="text-sm text-gray-300">Major Clients</div>
                 </div>
               </motion.div>
@@ -276,11 +268,6 @@ const Assurance = () => {
                 Contact Us
                 <FiArrowRight />
               </Link>
-
-              <a href="/assets/Finocos-Assurance-Proposal.pdf" className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 rounded-md text-white hover:bg-white/6 transition">
-                Request Proposal
-                <FiDownload />
-              </a>
             </div>
           </motion.div>
         </div>
@@ -289,14 +276,13 @@ const Assurance = () => {
       {/* Footer mini (contact summary) */}
       <footer className="py-10 border-t border-white/6">
         <div className="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <div className="text-sm text-gray-300">© {new Date().getFullYear()} Finocos. All rights reserved.</div>
+          {/* <div>
             <div className="text-xs text-gray-500 mt-1">Registered & compliant — tailored assurance for modern businesses.</div>
-          </div>
+          </div> */}
           <div className="flex items-center gap-4">
             <a className="text-gray-300 hover:text-white" href="mailto:partner@finocos.com"><FiMail /></a>
             <a className="text-gray-300 hover:text-white" href="tel:+911234567890"><FiPhone /></a>
-            <Link to="/privacy" className="text-gray-400 text-sm hover:text-white">Privacy</Link>
+            {/* <Link to="/privacy" className="text-gray-400 text-sm hover:text-white">Privacy</Link> */}
           </div>
         </div>
       </footer>

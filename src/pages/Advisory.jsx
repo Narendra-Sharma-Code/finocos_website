@@ -101,11 +101,25 @@ const fadeUp = {
 const Advisory = () => {
   return (
     <motion.main
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white"
+      className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-black text-white"
       initial="hidden"
       animate="show"
       variants={pageContainer}
     >
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-32 -left-32 h-[520px] w-[520px] rounded-full bg-cyan-500/15 blur-3xl" />
+        <motion.div
+          className="absolute -top-40 -right-40 h-[620px] w-[620px] rounded-full bg-indigo-500/15 blur-3xl"
+          animate={{ x: [0, -20, 0], y: [0, 18, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-40 left-1/2 h-[680px] w-[680px] -translate-x-1/2 rounded-full bg-sky-500/10 blur-3xl"
+          animate={{ y: [0, -22, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      </div>
+
       {/* HERO */}
       <header className="pt-24 pb-12">
         <div className="container mx-auto max-w-6xl px-4">
@@ -115,12 +129,12 @@ const Advisory = () => {
           >
             <div className="md:w-2/3">
               <div className="inline-flex items-center gap-4 mb-4">
-                <div className="p-3 rounded-full bg-gradient-to-br from-purple-600 to-pink-400/20 ring-1 ring-white/6">
-                  <FiTrendingUp className="text-3xl text-pink-200" />
+                <div className="p-3 rounded-full bg-gradient-to-br from-indigo-600 to-cyan-500/20 ring-1 ring-white/6">
+                  <FiTrendingUp className="text-3xl text-cyan-200" />
                 </div>
 
                 <div>
-                  <h3 className="text-sm text-pink-300 font-semibold uppercase tracking-wide">
+                  <h3 className="text-sm text-cyan-300 font-semibold uppercase tracking-wide">
                     Advisory & Compliance
                   </h3>
                   <p className="text-gray-400 text-sm">
@@ -129,7 +143,7 @@ const Advisory = () => {
                 </div>
               </div>
 
-              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 to-pink-300">
+              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-5 bg-clip-text text-transparent bg-gradient-to-r from-slate-100 to-cyan-200">
                 Practical advisory that keeps MSMEs compliant — and growing
               </h1>
 
@@ -142,19 +156,19 @@ const Advisory = () => {
               <div className="flex flex-wrap gap-4">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 rounded-md text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-1"
+                  className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-700 hover:to-cyan-600 rounded-md text-white font-semibold shadow-lg transition-transform transform hover:-translate-y-1"
                 >
                   Schedule a Consultation
                   <FiArrowRight />
                 </Link>
 
-                <a
+                {/* <a
                   href="/assets/Finocos-Advisory-Brochure.pdf"
                   className="inline-flex items-center gap-2 px-4 py-3 border border-white/10 rounded-md text-white/90 text-sm bg-white/3 hover:bg-white/4 transition"
                 >
                   <FiDownload />
                   <span>Download Brochure</span>
-                </a>
+                </a> */}
               </div>
             </div>
 
@@ -169,7 +183,7 @@ const Advisory = () => {
 
               <div className="flex flex-col gap-3 mb-3">
                 <a className="flex items-start gap-3 text-gray-100 hover:text-white" href="tel:+911234567890">
-                  <div className="p-2 rounded-md bg-gradient-to-br from-purple-600 to-pink-400/20">
+                  <div className="p-2 rounded-md bg-gradient-to-br from-indigo-600 to-cyan-500/20">
                     <FiPhone className="text-white text-lg" />
                   </div>
                   <div>
@@ -179,7 +193,7 @@ const Advisory = () => {
                 </a>
 
                 <a className="flex items-start gap-3 text-gray-100 hover:text-white" href="mailto:partner@finocos.com">
-                  <div className="p-2 rounded-md bg-gradient-to-br from-pink-500 to-purple-600/20">
+                  <div className="p-2 rounded-md bg-gradient-to-br from-emerald-500 to-cyan-500/15">
                     <FiMail className="text-white text-lg" />
                   </div>
                   <div>
@@ -192,7 +206,7 @@ const Advisory = () => {
               <div className="pt-3 border-t border-white/6 mt-2">
                 <Link
                   to="/contact"
-                  className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-md text-sm font-medium text-white hover:from-pink-600 hover:to-purple-700 transition"
+                  className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-indigo-600 rounded-md text-sm font-medium text-white hover:from-cyan-600 hover:to-indigo-700 transition"
                 >
                   Request Callback
                 </Link>
@@ -219,31 +233,25 @@ const Advisory = () => {
                 <motion.article
                   key={svc.id}
                   variants={fadeUp}
-                  className="group relative overflow-hidden rounded-2xl p-6 border border-white/8 bg-gradient-to-br from-white/3 to-white/4 backdrop-blur-sm hover:shadow-xl transition-all duration-400"
+                  className="group relative overflow-hidden rounded-2xl p-6 border border-white/10 bg-gradient-to-br from-white/4 to-white/2 backdrop-blur-md hover:shadow-2xl hover:border-cyan-400/30 transition-all duration-300"
                 >
+                  <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute -top-24 -right-24 h-56 w-56 rounded-full bg-cyan-500/10 blur-2xl" />
+                    <div className="absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-indigo-500/10 blur-2xl" />
+                  </div>
                   <div className="flex items-start gap-5">
                     <div className="flex-shrink-0">
-                      <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-gradient-to-br from-pink-500 to-purple-600 text-white text-xl font-bold shadow">
+                      <div className="w-14 h-14 rounded-lg flex items-center justify-center bg-gradient-to-br from-cyan-500 to-indigo-600 text-white text-xl font-bold shadow">
                         <span className="text-lg">{String(svc.id).padStart(2, "0")}</span>
                       </div>
                     </div>
 
                     <div>
                       <div className="flex items-center gap-3">
-                        <div className="text-pink-300">{svc.icon}</div>
+                        <div className="text-cyan-300">{svc.icon}</div>
                         <h3 className="text-lg font-semibold text-white">{svc.title}</h3>
                       </div>
                       <p className="text-gray-300 mt-3">{svc.description}</p>
-
-                      <div className="mt-4">
-                        <a
-                          href="#contact"
-                          className="inline-flex items-center gap-2 text-sm text-pink-300 hover:underline"
-                        >
-                          <FiCheckCircle />
-                          <span>See our approach to {svc.title.toLowerCase()}</span>
-                        </a>
-                      </div>
                     </div>
                   </div>
                 </motion.article>
@@ -264,20 +272,20 @@ const Advisory = () => {
 
               <motion.div variants={fadeUp} className="rounded-2xl p-6 grid grid-cols-2 gap-4 bg-white/3 border border-white/8 backdrop-blur-sm">
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-pink-300">12+</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">5+</div>
                   <div className="text-sm text-gray-300">Years Experience</div>
                 </div>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-pink-300">95%</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">95%</div>
                   <div className="text-sm text-gray-300">Client Retention</div>
                 </div>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-pink-300">120+</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">10+</div>
                   <div className="text-sm text-gray-300">Professionals</div>
                 </div>
                 <div className="text-center py-4">
-                  <div className="text-3xl font-extrabold text-pink-300">60+</div>
-                  <div className="text-sm text-gray-300">Major Clients</div>
+                  <div className="text-3xl font-extrabold text-cyan-300">40+</div>
+                  <div className="text-sm text-gray-300">Clients</div>
                 </div>
               </motion.div>
 
@@ -305,15 +313,13 @@ const Advisory = () => {
               <motion.div
                 key={o.title}
                 variants={fadeUp}
-                className="bg-white/4 backdrop-blur-sm p-6 rounded-xl border border-white/8 hover:shadow-xl transition-all duration-300"
+                className="group relative bg-white/4 backdrop-blur-md p-6 rounded-xl border border-white/10 hover:border-cyan-400/25 hover:shadow-2xl transition-all duration-300"
               >
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute -top-20 -right-20 h-44 w-44 rounded-full bg-cyan-500/10 blur-2xl" />
+                </div>
                 <h4 className="text-lg font-semibold mb-2 text-white">{o.title}</h4>
                 <p className="text-gray-300 text-sm">{o.description}</p>
-                <div className="mt-4">
-                  <a href="#contact" className="text-pink-300 text-sm hover:underline inline-flex items-center gap-2">
-                    Learn more <FiArrowRight />
-                  </a>
-                </div>
               </motion.div>
             ))}
           </div>
@@ -323,20 +329,20 @@ const Advisory = () => {
       {/* CTA STRIP */}
       <section className="py-12">
         <div className="container mx-auto max-w-6xl px-4">
-          <motion.div variants={fadeUp} className="rounded-2xl bg-gradient-to-r from-purple-700 to-pink-500 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <motion.div variants={fadeUp} className="rounded-2xl bg-gradient-to-r from-indigo-700 to-cyan-600 p-8 flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-2xl font-bold text-white">Ready to make compliance effortless?</h3>
               <p className="text-white/90">Talk to our advisory team and get a tailored plan for your business in 48 hours.</p>
             </div>
 
             <div className="flex gap-3">
-              <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 bg-white text-purple-700 rounded-md font-semibold shadow hover:scale-105 transition-transform">
+              <Link to="/contact" className="inline-flex items-center gap-2 px-5 py-3 bg-white text-indigo-700 rounded-md font-semibold shadow hover:scale-105 transition-transform">
                 Contact Us <FiArrowRight />
               </Link>
 
-              <a href="/assets/Finocos-Advisory-Proposal.pdf" className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 rounded-md text-white hover:bg-white/6 transition">
+              {/* <a href="/assets/Finocos-Advisory-Proposal.pdf" className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 rounded-md text-white hover:bg-white/6 transition">
                 Request Proposal <FiDownload />
-              </a>
+              </a> */}
             </div>
           </motion.div>
         </div>
@@ -353,7 +359,7 @@ const Advisory = () => {
           <div className="flex items-center gap-4">
             <a className="text-gray-300 hover:text-white" href="mailto:partner@finocos.com"><FiMail /></a>
             <a className="text-gray-300 hover:text-white" href="tel:+918655167028"><FiPhone /></a>
-            <Link to="/privacy" className="text-gray-400 text-sm hover:text-white">Privacy</Link>
+            {/* <Link to="/privacy" className="text-gray-400 text-sm hover:text-white">Privacy</Link> */}
           </div>
         </div>
       </footer>

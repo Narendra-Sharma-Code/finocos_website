@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import logo from '../../assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,11 +41,12 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-2 space-y-4"
           >
-            <Link to="/" className="inline-block">
-              <img 
-                src="/src/assets/logo.png" 
-                alt="Finocos Logo" 
-                className="h-12"
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src={logo}
+                alt="Finocos Logo"
+                className="h-12 opacity-95 hover:opacity-100 transition-opacity"
+                loading="lazy"
               />
             </Link>
             <p className="text-gray-400 mb-6">
