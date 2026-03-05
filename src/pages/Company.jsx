@@ -10,7 +10,6 @@ import {
   FiHeart,
   FiTrendingUp,
   FiClock,
-  FiCheckCircle,
   FiChevronRight
 } from "react-icons/fi";
 
@@ -82,9 +81,6 @@ const Company = () => {
                 Contact Us
                 <FiChevronRight />
               </Link>
-              <a href="/assets/Finocos-Company-Overview.pdf" className="inline-flex items-center gap-2 px-4 py-3 border border-white/10 rounded-md text-white/90 bg-white/3 hover:bg-white/4 transition">
-                <FiCheckCircle /> Company Overview
-              </a>
             </div>
           </motion.div>
         </div>
@@ -260,7 +256,7 @@ const Company = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <a href="mailto:hello@finocos.com" className="text-gray-300 hover:text-white">hello@finocos.com</a>
+            <a href="mailto:partner@finocos.com" className="text-gray-300 hover:text-white">partner@finocos.com</a>
             <a href="/privacy" className="text-gray-400 text-sm hover:text-white">Privacy</a>
           </div>
         </div>
